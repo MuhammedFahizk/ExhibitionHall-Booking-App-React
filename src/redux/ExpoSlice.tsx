@@ -10,12 +10,13 @@ const expoSlice = createSlice({
     initialState,
     reducers: {
         choseDate: (state, action) => {
-        state.choseDate = action.payload
+        state.choseDate = action.payload.value
         },
         bookStall: (state, action) => {
-            state.bookings.push(action.payload);
+            action.payload.date =  state.choseDate;
+            state.bookings.push( action.payload);
         }
     }
 })
-export const {choseDate} =  expoSlice.actions;
+export const {choseDate, bookStall} =  expoSlice.actions;
 export default expoSlice.reducer;

@@ -32,7 +32,7 @@ const Head = () => {
         </div>
       
       <div className="flex justify-between gap-5">
-          <button className="text-black " onClick={handleThemeCheck}>
+          <button className=" " onClick={handleThemeCheck}>
             {theme === "dark" ? (
             //   <FontAwesomeIcon icon={faSun}  className="text-2xl "/>
               <LuSunMoon className="text-2xl  text-white"/>
@@ -40,7 +40,7 @@ const Head = () => {
           <LuMoon className="text-2xl text-wite"/>
             )}
           </button>
-          <Link to={'loginPage'} className="bg-red-500  flex items-center rounded-lg px-3">
+          <Link to={'loginPage'} className="bg-blue-900 px-8 font-bold text-white flex items-center rounded-lg px-3">
             Login
           </Link>
       </div>

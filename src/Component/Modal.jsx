@@ -5,13 +5,13 @@ import { useDispatch } from "react-redux";
 import { choseDate } from "../redux/ExpoSlice";
 import  Form  from './Form' ;
 
-export default function Modal({setShowModal}) {
+export default function Modal({setShowModal, shellData}) {
   const [value, onChange] = useState(new Date());
   const [calendar, setCalender] = useState (true)
   const dispatch = useDispatch()
 
   useEffect( () => {
-   dispatch(choseDate(value))
+   dispatch(choseDate({value,}))
   console.log('asdas')
   }, [value])
   return (
@@ -41,7 +41,7 @@ export default function Modal({setShowModal}) {
                 </div>
                 {/*body*/}
                 <div className="relative p-6 flex-auto">
-               {calendar? <Calendar  onChange={onChange} value={value}/>: <Form/>}
+               {calendar? <Calendar  onChange={onChange} value={value}/>: <Form setShowModal={setShowModal}  shellData={shellData}/>}
 
                 </div>
                 {/*footer*/}
