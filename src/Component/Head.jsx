@@ -40,7 +40,7 @@ const Head = () => {
           <LuMoon className="text-2xl text-wite"/>
             )}
           </button>
-          <Link to={'loginPage'} className="bg-blue-900 px-8 font-bold text-white flex items-center rounded-lg px-3">
+          <Link to={'/'} className="bg-blue-900  font-bold text-white flex items-center rounded-lg px-3">
             Login
           </Link>
       </div>

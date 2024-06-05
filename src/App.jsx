@@ -8,22 +8,22 @@ import Error from "./Pages/Error";
 import LoginPage from "./Pages/LoginPage";
 import { Provider } from "react-redux";
 
-import { configureStore } from "@reduxjs/toolkit";
-import ExpoSlice from "./redux/ExpoSlice";
-const store = configureStore({
-  reducer:{
-    expo: ExpoSlice
-  }
-})
+
+import SignUp from "./Pages/SignUp";
+import { store } from "./redux/Store";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/home",
     element: <Home/> ,
     errorElement:  <Error/>,
   },
   {
-    path: '/loginPage',
+    path: '/',
     element: <LoginPage />
+  },
+  {
+    path: 'signUp',
+    element: <SignUp/>
   }
 ]);
 function App() {

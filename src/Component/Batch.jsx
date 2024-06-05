@@ -3,7 +3,7 @@ import Shell from '../Component/Shell';
 
 const Batch = ({ stall, setShowModal, setShellData }) => {
   const { bookings } = useSelector((state) => state.expo);
-  const { choseDate } = useSelector((state) => state.expo);
+  const {choseDate} = useSelector((state) => state.expo)
   let shells = [];
   for (let x = 1; x <= 20; x++) {
     shells.push(x);
@@ -16,9 +16,9 @@ const Batch = ({ stall, setShowModal, setShellData }) => {
       <div>
         {shells.map((shell, index) => {
           // Check if there's a booking for this shell on the chosen date
-          const hasBooking = bookings.some(item => item.stall === stall && item.date.toDateString() === choseDate.toDateString()  && item.shell === shell);
+          const hasBooking = bookings.some(item => item.stall === stall &&item.date === choseDate   && item.shell === shell);
             // hasBooking? console.log('afds'): ''
-            console.log(hasBooking)
+            // console.log("booking:", bookings)
           return (
             <Shell
               setShowModal={setShowModal}

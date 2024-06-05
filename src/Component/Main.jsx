@@ -1,7 +1,7 @@
 import  { useState } from "react"; // Don't forget to import React
 import Batch from "./Batch";
-import Modal from "./Modal";
 import { useSelector } from "react-redux";
+import ModalSow from "./ModalSow";
 
 const Main = () => {
   const [showModal, setShowModal] = useState(false);
@@ -13,6 +13,7 @@ const Main = () => {
 
   const batch = ["A", "B", "C"];
   const {choseDate} = useSelector((state) => state.expo)
+  console.log('choseDate', choseDate);
 
   return (
     <>
@@ -22,10 +23,10 @@ const Main = () => {
           type="button"
           onClick={() => setShowModal(true)}
         >Choos Date</button>
-        <h1 className="bg-black dark:bg-blue-800 rounded flex items-center px-4  font-bold text-white">{choseDate.toDateString()}</h1>
+        <h1 className="bg-black dark:bg-blue-800 rounded flex items-center px-4  font-bold text-white">{choseDate}</h1>
       </div>
       <div className="flex justify-between mx-20 mb-20 gap-6">
-        {showModal ? <Modal setShowModal={setShowModal}    shellData={shellData}  /> : ""}
+        {showModal ? <ModalSow setShowModal={setShowModal}    shellData={shellData}  /> : ""}
         {batch.map((stall, index) => (
           <Batch stall={stall} key={index} setShellData={setShellData} setShowModal={setShowModal} />
         ))}
